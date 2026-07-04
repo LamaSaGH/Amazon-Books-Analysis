@@ -7,9 +7,11 @@ import matplotlib.pyplot as plt
 # =========================
 # 1) Load Data (with cache)
 # =========================
+BASE_DIR = Path(__file__).resolve().parent
+
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_books.csv")
+    df = pd.read_csv(BASE_DIR / "cleaned_books.csv")
     return df
 
 df = load_data()
